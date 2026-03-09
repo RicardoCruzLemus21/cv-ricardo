@@ -1,0 +1,103 @@
+.seccion-proyectos {
+  position: relative; 
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: center;
+  font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+  overflow: hidden; 
+}
+
+/* Magia del fondo dibujado con franjas blancas (bordes superior e inferior) */
+.fondo-zigzag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; 
+  transform: skewY(-3deg) scaleY(1.1);
+  border-top: 6px solid #ffffff;
+  border-bottom: 6px solid #ffffff;
+}
+
+.contenedor {
+  position: relative; 
+  z-index: 1; 
+  max-width: 1100px;
+  width: 100%;
+}
+
+.titulo-seccion {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3.5rem;
+  
+  /* 1. Color Café Muy Oscuro (casi negro) para máxima seriedad */
+  color: #2b2825; 
+  
+  /* 2. Efecto de contorno blanco (Halo) para legibilidad perfecta 
+     sobre las líneas blancas del fondo zigzag */
+  text-shadow: 
+    -1px -1px 0 #ffffff,
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff,
+     0px 0px 8px rgba(255, 255, 255, 0.8);
+  
+  /* 3. Subrayado en Celeste para mantener el toque de color del proyecto */
+  border-bottom: 3px solid #8ab8d8; 
+  
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 2; /* Asegura que esté por encima del SVG */
+}
+
+.grid-proyectos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+/* Tarjetas alineadas EXACTAMENTE a la paleta de Experiencia */
+.tarjeta-proyecto {
+  background-color: rgba(74, 77, 82, 0.95); 
+  backdrop-filter: blur(5px); 
+  padding: 2.5rem 1.5rem;
+  border-radius: 12px;
+  border-top: 4px solid #8ab8d8; 
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  text-align: center; 
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(138, 184, 216, 0.15);
+  }
+
+  .icono-proyecto {
+    /* Si el emoji no se tiñe, puedes usar iconos SVG o de FontAwesome. Para texto normal, esto funciona: */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #8ab8d8; 
+  }
+
+  h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  p {
+    color: #d1d6d9;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+  }
+}

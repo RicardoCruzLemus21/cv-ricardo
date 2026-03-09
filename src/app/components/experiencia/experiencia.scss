@@ -1,0 +1,136 @@
+.seccion-experiencia {
+  position: relative; 
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: center;
+  font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+  overflow: hidden; 
+}
+
+/* Magia del fondo dibujado con bordes blancos */
+.fondo-exp-zigzag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; 
+  /* Fronteras blancas superior e inferior para separar de otras secciones */
+  border-top: 6px solid #ffffff;
+  border-bottom: 6px solid #ffffff;
+}
+
+.contenedor {
+  position: relative; 
+  z-index: 1; 
+  max-width: 900px;
+  width: 100%;
+}
+
+.titulo-seccion {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3.5rem;
+  
+  /* 1. Usamos tu Café Muy Oscuro para el texto (se ve casi negro) */
+  color: #2b2825; 
+  
+  /* 2. Truco para la legibilidad: Añadimos una sombra blanca muy nítida. 
+     Esto crea un efecto de "halo" que separa las letras oscuras de la línea blanca del fondo. */
+  text-shadow: 
+    -1px -1px 0 #ffffff,
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff,
+     0px 0px 8px rgba(255, 255, 255, 0.8);
+  
+  /* 3. Mantenemos la línea de subrayado Celeste de acento */
+  border-bottom: 3px solid #8ab8d8; 
+  
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  position: relative; /* Asegura que el texto esté encima del fondo */
+  z-index: 2;
+}
+
+.grid-experiencia {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Tarjeta en gris plomizo coincidente con el resto del sitio */
+.tarjeta-experiencia {
+  background-color: rgba(74, 77, 82, 0.95); 
+  backdrop-filter: blur(5px);
+  padding: 3rem;
+  border-radius: 12px;
+  border-left: 6px solid #8ab8d8; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(138, 184, 216, 0.15); 
+    border-left-color: #ffffff; 
+  }
+}
+
+.fecha {
+  display: inline-block;
+  background-color: #2b2825; 
+  color: #8ab8d8; 
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.puesto {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #ffffff; 
+}
+
+.empresa {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #8ab8d8; 
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.descripcion {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #d1d6d9; 
+  margin-bottom: 1.5rem;
+}
+
+.lista-tareas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #d1d6d9; 
+
+    &::before {
+      content: '▸'; 
+      position: absolute;
+      left: 0;
+      top: -2px;
+      color: #8ab8d8; 
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+  }
+}

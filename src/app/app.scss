@@ -1,0 +1,185 @@
+/* ==================================
+   MENÚ DE NAVEGACIÓN
+================================== */
+.menu-fijo {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(64, 59, 56, 0.95); 
+  backdrop-filter: blur(10px); 
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3); 
+  z-index: 1000; 
+  padding: 1rem 0;
+}
+
+.contenedor-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+/* Estilos del Botón Hamburguesa */
+.menu-hamburguesa {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+
+  span {
+    width: 30px;
+    height: 3px;
+    background-color: #8ab8d8;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    position: absolute;
+    right: 2rem;
+  }
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+  
+  @media (max-width: 768px) {
+    display: none; // Se oculta en móvil
+    flex-direction: column;
+    position: absolute;
+    top: 100%; // Aparece justo debajo de la barra
+    left: 0;
+    width: 100%;
+    background-color: rgba(44, 40, 37, 0.98);
+    padding: 2rem 0;
+    text-align: center;
+    gap: 1.5rem;
+    border-bottom: 2px solid #8ab8d8;
+
+    &.activo {
+      display: flex; // Se muestra cuando Angular activa la clase
+    }
+  }
+
+  li a {
+    text-decoration: none;
+    color: #d1d6d9;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding-bottom: 0.4rem;
+    transition: all 0.3s ease;
+
+    &.activo {
+      color: #8ab8d8;
+      border-bottom: 2px solid #8ab8d8;
+    }
+  }
+}
+.contenedor-cv {
+  margin-top: 70px; 
+}
+
+/* ==================================
+   FOOTER (Actualizado a la nueva paleta)
+================================== */
+.seccion-footer {
+  background-color: #2b2825; /* Tu café más oscuro */
+  color: #d1d6d9; /* Texto en gris claro */
+  padding: 4rem 2rem 2rem 2rem;
+  font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+  border-top: 4px solid #7a8288; /* Línea divisoria en gris pizarra */
+}
+
+.contenedor-footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2.5rem;
+}
+
+.info-footer {
+  h3 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: 1px;
+  }
+  
+  p {
+    color: #8ab8d8; /* Puesto en celeste para que resalte */
+    font-size: 1.1rem;
+    margin: 0;
+  }
+}
+
+.redes-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.icono-red {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #d1d6d9; /* Iconos en gris claro */
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  svg {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+  }
+
+  .texto-correo {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  &:hover {
+    color: #8ab8d8; /* Se pintan de celeste brillante al pasar el cursor */
+    
+    svg {
+      transform: translateY(-5px); /* Pequeño salto del ícono */
+    }
+  }
+}
+
+.copyright-footer {
+  width: 100%;
+  border-top: 1px solid rgba(122, 130, 136, 0.3); /* Línea gris súper sutil */
+  padding-top: 1.5rem;
+  margin-top: 1rem;
+  
+  p {
+    font-size: 0.9rem;
+    color: #7a8288; /* Gris plomizo para que no robe atención */
+    margin: 0;
+  }
+}
+
+/* RESPONSIVO: Ajustes para celular */
+@media (max-width: 768px) {
+  .redes-footer {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .info-footer h3 {
+    font-size: 1.5rem;
+  }
+}

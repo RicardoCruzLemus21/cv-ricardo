@@ -1,0 +1,86 @@
+.sobre-mi-container {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  
+  /* Aquí está la magia de la nueva paleta */
+  /* #7a8288 es un gris neutro elegante (lado izquierdo). 
+     #403b38 es un café oscuro profundo y sereno (lado derecho). */
+  background: linear-gradient(110deg, #7a8288 45%, #403b38 45%);
+  
+  font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+}
+
+.perfil-info {
+  max-width: 800px;
+  text-align: center;
+}
+
+.nombre {
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: #ffffff; // Color de relleno blanco
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+
+  // --- AQUÍ ESTÁ EL CAMBIO PARA EL BORDE NEGRO ---
+  
+  // Opción A: Usando text-shadow para máxima compatibilidad (Recomendado)
+  // Crea un borde negro nítido de 1px alrededor de la letra blanca.
+  text-shadow: 
+   -1px -1px 0 #000000,  
+    1px -1px 0 #000000,
+   -1px  1px 0 #000000,
+    1px  1px 0 #000000;
+
+  // Opción B: Usando propiedades Webkit (borde más grueso, como la imagen)
+  // Si prefieres el borde un poco más grueso como se ve en la foto de referencia,
+  // descomenta estas dos líneas y comenta el text-shadow de arriba.
+  // -webkit-text-stroke: 1.5px #000000;
+  // text-stroke: 1.5px #000000; 
+  
+  // ------------------------------------------------
+}
+
+.titular {
+  font-size: 1.5rem;
+  font-weight: 500;
+  /* Nuevo color: Un celeste suave y brillante (#8ab8d8) para el acento principal */
+  color: #8ab8d8; 
+  margin-bottom: 2rem;
+}
+
+.descripcion {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  /* Nuevo color: Un gris muy clarito (#d1d6d9) para que el texto sea súper legible */
+  color: #d1d6d9; 
+  margin-bottom: 3rem;
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.foto-perfil-container {
+  margin-bottom: 2rem;
+}
+
+.foto-perfil {
+  width: 220px;
+  height: 220px;
+  object-fit: cover; 
+  border-radius: 50%; 
+  /* Actualizamos el borde al mismo celeste del titular para crear armonía */
+  border: 4px solid #8ab8d8; 
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); 
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  &:hover {
+    transform: translateY(-5px) scale(1.03); 
+    /* Le dimos a la sombra un ligerísimo tinte celeste para el efecto hover */
+    box-shadow: 0 20px 40px rgba(138, 184, 216, 0.2); 
+  }
+}

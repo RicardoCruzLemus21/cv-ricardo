@@ -1,0 +1,154 @@
+.seccion-habilidades {
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+
+  /* Fondo en X (Mantenemos tu paleta de cafés y grises) */
+  background: conic-gradient(
+    from 45deg at 50% 50%,
+    #7a8288 0deg 90deg,    
+    #403b38 90deg 180deg,  
+    #5e656b 180deg 270deg, 
+    #2b2825 270deg 360deg  
+  ); 
+
+  /* LÍNEAS BLANCAS INDUSTRIALES (11px) */
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200vmax; 
+    height: 11px;    /* Grosor imponente de 11px */
+    background-color: #ffffff;
+    z-index: 1;
+    /* Un toque de profundidad para que la línea no se vea plana */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  /* Bordes de sección a juego con el grosor de las diagonales */
+  border-top: 11px solid #ffffff;
+  border-bottom: 11px solid #ffffff;
+}
+
+.contenedor {
+  position: relative;
+  z-index: 2; /* Las tarjetas flotan sobre las líneas */
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.titulo-seccion {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3.5rem;
+  
+  /* 1. Usamos tu Café Muy Oscuro para el texto (se ve casi negro) */
+  color: #2b2825; 
+  
+  /* 2. Truco para la legibilidad: Añadimos una sombra blanca muy nítida. 
+     Esto crea un efecto de "halo" que separa las letras oscuras de la línea blanca del fondo. */
+  text-shadow: 
+    -1px -1px 0 #ffffff,
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff,
+     0px 0px 8px rgba(255, 255, 255, 0.8);
+  
+  /* 3. Mantenemos la línea de subrayado Celeste de acento */
+  border-bottom: 3px solid #8ab8d8; 
+  
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  position: relative; /* Asegura que el texto esté encima del fondo */
+  z-index: 2;
+}
+/* El resto de las tarjetas (categoria-habilidad, tag, etc.) se mantiene igual */
+
+/* Esto mantiene tus 4 cuadrados */
+.grid-habilidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+}
+
+/* El diseño de las tarjetas */
+.categoria-habilidad {
+  /* Fondo gris plomizo semi-transparente para contrastar con el fondo en X */
+  background-color: rgba(74, 77, 82, 0.95); 
+  backdrop-filter: blur(5px);
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  border-top: 4px solid #403b38; /* Borde inicial café oscuro */
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+
+  &:hover {
+    transform: translateY(-8px);
+    /* Sombra con un ligerísimo destello celeste al pasar el mouse */
+    box-shadow: 0 15px 40px rgba(138, 184, 216, 0.15);
+    border-top-color: #8ab8d8; /* La línea superior brilla en celeste */
+  }
+
+  /* Contenedor para alinear logo y título */
+  .encabezado-categoria {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    margin-bottom: 1.8rem;
+
+    h3 {
+      font-size: 1.3rem;
+      margin: 0; 
+      color: #ffffff; 
+      letter-spacing: 0.5px;
+    }
+
+    .icono-cat {
+      width: 28px;
+      height: 28px;
+      color: #8ab8d8; /* Los iconos de cada tarjeta ahora son celestes */
+    }
+  }
+}
+
+/* Separa y organiza las etiquetas pequeñas */
+.contenedor-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Diseño de las pastillas/etiquetas de conocimiento */
+.tag, .tag-blanda {
+  padding: 8px 16px;
+  border-radius: 6px; 
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: #403b38; /* Fondo café oscuro */
+  border: 1px solid #7a8288; /* Borde gris pizarra */
+  color: #d1d6d9; /* Texto gris claro, igual que en Sobre Mí */
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+/* El efecto al pasar el mouse por las etiquetas */
+.tag:hover, .tag-blanda:hover {
+  background-color: #7a8288; /* El fondo pasa a gris */
+  border-color: #8ab8d8; /* El borde brilla en celeste */
+  color: #ffffff; 
+  transform: translateY(-3px); 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+}
